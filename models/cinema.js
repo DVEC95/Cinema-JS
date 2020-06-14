@@ -51,4 +51,11 @@ Cinema.prototype.overLength = function(length){
   return foundFilms;
 };
 
+Cinema.prototype.totalRunningTime = function(){
+  const totalTime = this.films.reduce((counter, film) => {
+    return counter + film.length;
+  }, 0);
+  return totalTime;
+};
+
 module.exports = Cinema;
