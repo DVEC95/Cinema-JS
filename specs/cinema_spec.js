@@ -35,17 +35,24 @@ describe('Cinema', function () {
 
   it('should be able to find a film by title', function(){
     const actual = [bladeRunner];
-    assert.deepStrictEqual(actual, cinema.findTitle("Blade Runner 2049"));
+    assert.deepStrictEqual(actual, cinema.findByTitle("Blade Runner 2049"));
   });
 
   it('should be able to filter films by genre', function(){
     const actual = [moonlight, trainspotting];
     assert.deepStrictEqual(actual, cinema.findByGenre("drama"));
   });
-  
-  it('should be able to check whether there are some films from a particular year');
+
+  it('should be able to check whether there are some films from a particular year', function(){
+    const actual = [bladeRunner, dunkirk, trainspotting];
+    assert.deepStrictEqual(actual, cinema.findByYear(2017));
+  });
+
   it('should be able to check whether there are no films from a particular year');
+
   it('should be able to check whether all films are over a particular length');
+
   it('should be able to calculate total running time of all films');
+
 
 });
