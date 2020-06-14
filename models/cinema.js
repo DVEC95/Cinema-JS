@@ -9,7 +9,7 @@ Cinema.prototype.titles = function(){
   return titles;
 };
 
-Cinema.prototype.findTitle = function(title){
+Cinema.prototype.findByTitle = function(title){
   const foundFilm = this.films.filter((film) => {
     if (film.title === title){
       return film;
@@ -19,8 +19,17 @@ Cinema.prototype.findTitle = function(title){
 };
 
 Cinema.prototype.findByGenre = function(genre){
-  const foundFilms = this.films.filter((film) =>{
+  const foundFilms = this.films.filter((film) => {
     if (film.genre === genre){
+      return film;
+    }
+  });
+  return foundFilms;
+};
+
+Cinema.prototype.findByYear = function(year){
+  const foundFilms = this.films.filter((film) => {
+    if (film.year == year){
       return film;
     }
   });
