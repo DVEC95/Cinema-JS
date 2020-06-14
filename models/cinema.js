@@ -32,6 +32,9 @@ Cinema.prototype.findByYear = function(year){
     if (film.year == year){
       return film;
     }
+    else {
+      return null;
+    }
   });
   return foundFilms;
 };
